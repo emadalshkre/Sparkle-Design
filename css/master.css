@@ -28,7 +28,6 @@ html {
 }
 body {
   font-family: "Raleway", sans-serif;
-  /* background-color: #1b1b1b; */
 }
 ul {
   list-style: none;
@@ -37,6 +36,47 @@ ul {
   margin: 0px auto;
   padding: 0px 15px;
 }
+.section {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+.section-title {
+  margin: 0px auto 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.section-title img {
+  height: 50px;
+  margin: 0px 0px 15px;
+}
+.section-title h2 {
+  font-size: 20px;
+  letter-spacing: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin: 0px 0px 20px;
+}
+.section-title p {
+  color: var(--paragraph-color);
+  width: 800px;
+  max-width: fit-content;
+  line-height: 2;
+}
+button {
+  background: var(--main-color);
+  border: none;
+  text-transform: uppercase;
+  padding: 15px 30px;
+  font-weight: bold;
+  font-size: 12px;
+  letter-spacing: 2px;
+  border-radius: 30px;
+}
+/*  
+start the design
+*/
 header {
   position: relative;
   height: 80vh;
@@ -45,7 +85,8 @@ header {
   background-repeat: no-repeat;
   background-size: cover;
 }
-header::before {
+header::before,
+header::after {
   content: "";
   position: absolute;
   rotate: 45deg;
@@ -59,17 +100,9 @@ header::before {
   translate: -50%;
 }
 header::after {
-  content: "";
-  position: absolute;
-  rotate: 45deg;
   width: 20px;
   height: 20px;
-  border: 1px solid var(--paragraph-color);
-  border-left: none;
-  border-top: none;
   bottom: 25px;
-  left: 50%;
-  translate: -50%;
 }
 header .container {
   text-align: center;
@@ -82,6 +115,7 @@ header .container .main {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-top: 5px;
 }
 header .container img {
   height: 50px;
@@ -121,17 +155,118 @@ header .container .main-paragraph p {
   letter-spacing: 6px;
   margin: 0px 0px 50px;
 }
-header .container .main-paragraph button {
-  background: var(--main-color);
-  border: none;
-  text-transform: uppercase;
-  padding: 15px 30px;
-  font-weight: bold;
-  font-size: 12px;
-  letter-spacing: 2px;
-  border-radius: 30px;
-}
+
 header .container i {
   color: white;
   padding: 20px;
+}
+.info {
+  padding-top: 80px;
+  padding-bottom: 120px;
+}
+@media (max-width: 767px) {
+  .info {
+    padding-bottom: 80px;
+  }
+}
+.info .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.info .container img {
+  width: fit-content;
+  margin-bottom: 50px;
+}
+.info .container p {
+  width: 600px;
+  max-width: 100%;
+  text-align: center;
+  line-height: 2;
+  color: var(--paragraph-color);
+}
+.services {
+  background-color: #f4f4f4;
+}
+.services-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.services .services-content .cell {
+  text-align: center;
+}
+.shape {
+  box-shadow: 0px 0px 10px rgb(0, 0, 0, 0.4);
+  background-color: white;
+}
+.services .services-content .cell .box {
+  padding: 40px 20px 20px;
+  margin: 0px 0px 20px;
+}
+.services .services-content .cell .box i {
+  color: var(--main-color);
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: var(--black-color);
+  margin: 0px 0px 30px;
+}
+.services .services-content .cell .box h3 {
+  font-weight: 500;
+  font-size: 18px;
+  word-spacing: 400px;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  margin: 0px 0px 40px;
+  line-height: 1.6;
+}
+@media (max-width: 767px) {
+  .services .services-content .cell .box h3 {
+    margin: 0px 0px 20px;
+  }
+}
+.services .services-content .cell .box p {
+  line-height: 1.6;
+  color: var(--paragraph-color);
+}
+.services .services-content .cell .level {
+  padding: 10px 10px 10px 15px;
+  text-align: start;
+  margin: 0px 0px 40px;
+}
+.services .services-content .cell .level h4 {
+  font-size: 14px;
+  margin: 0px 0px 10px auto;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+.services .services-content .cell .level .prograss {
+  width: 100%;
+  background-color: #f4f4f4;
+  height: 4px;
+  margin: 0px 0px 15px;
+}
+.services .services-content .cell .level .prograss span {
+  display: flex;
+  height: 4px;
+  width: 80%;
+  background-color: var(--main-color);
+}
+.black-background {
+  background-color: var(--black-color);
+}
+.black-background .container .status {
+  text-align: center;
+  background-color: white;
+  padding: 10px;
+}
+.black-background .container .status h4 {
+  font-family: sans-serif;
+  margin: 0px 0px 8px;
+  letter-spacing: 5px;
+}
+.black-background .container .status p {
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 2px;
 }
