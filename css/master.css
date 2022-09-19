@@ -78,6 +78,11 @@ button {
   box-shadow: 0px 0px 20px rgb(0, 0, 0, 0.2);
   background-color: white;
 }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+}
 /*  
 start the design
 */
@@ -193,27 +198,22 @@ header .container i {
   background-color: #f4f4f4;
   padding-bottom: 0px;
 }
-.services-content {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 30px;
-}
 
-.services .services-content .cell {
+.services .grid .cell {
   text-align: center;
 }
 
-.services .services-content .cell .box {
+.services .grid .cell .box {
   padding: 40px 20px 20px;
   margin: 0px 0px 20px;
 }
-.services .services-content .cell .box i {
+.services .grid .cell .box i {
   color: var(--main-color);
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: var(--black-color);
   margin: 0px 0px 30px;
 }
-.services .services-content .cell .box h3 {
+.services .grid .cell .box h3 {
   font-weight: 500;
   font-size: 18px;
   word-spacing: 400px;
@@ -223,32 +223,32 @@ header .container i {
   line-height: 1.6;
 }
 @media (max-width: 767px) {
-  .services .services-content .cell .box h3 {
+  .services .grid .cell .box h3 {
     margin: 0px 0px 20px;
   }
 }
-.services .services-content .cell .box p {
+.services .grid .cell .box p {
   line-height: 1.6;
   color: var(--paragraph-color);
 }
-.services .services-content .cell .level {
+.services .grid .cell .level {
   padding: 10px 10px 10px 15px;
   text-align: start;
   margin: 0px 0px 40px;
 }
-.services .services-content .cell .level h4 {
+.services .grid .cell .level h4 {
   font-size: 14px;
   margin: 0px 0px 10px auto;
   font-weight: 500;
   text-transform: capitalize;
 }
-.services .services-content .cell .level .prograss {
+.services .grid .cell .level .prograss {
   width: 100%;
   background-color: #f4f4f4;
   height: 4px;
   margin: 0px 0px 15px;
 }
-.services .services-content .cell .level .prograss span {
+.services .grid .cell .level .prograss span {
   display: flex;
   height: 4px;
   width: 80%;
@@ -272,6 +272,9 @@ header .container i {
   font-size: 14px;
   letter-spacing: 2px;
   text-transform: uppercase;
+}
+.portfolio {
+  padding-bottom: 0px;
 }
 .portfolio-content .list {
   display: flex;
@@ -323,8 +326,16 @@ header .container i {
   flex-wrap: wrap;
   margin-top: 60px;
 }
+.images .box {
+  width: 320px;
+  height: 350px;
+  margin: 0px auto;
+}
 .images .box img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 .images .box:nth-child(2) {
   position: relative;
@@ -347,7 +358,7 @@ header .container i {
 .images .box:nth-child(2) .text::after {
   position: absolute;
   content: "";
-  background-color: rgb(255, 229, 0, 0.9);
+  background-color: rgb(255, 229, 0, 0.8);
   height: 20px;
   width: 80%;
   left: 50%;
@@ -372,12 +383,12 @@ header .container i {
 }
 @media (min-width: 768px) {
   .images .box {
-    width: 50%;
+    width: calc(100% / 3);
   }
 }
 @media (min-width: 1200px) {
   .images .box {
-    width: 25%;
+    width: calc(100% / 6);
   }
 }
 .portfolio button {
@@ -392,4 +403,40 @@ header .container i {
   font-weight: 500;
   font-size: 15px;
   letter-spacing: 8px;
+}
+.team .grid .column .image {
+  position: relative;
+  height: 350px;
+  width: 100%;
+}
+.team .grid .column img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.3s;
+}
+
+.team .grid .column h4 {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  background-color: rgb(255, 229, 0, 0.8);
+  padding: 20px;
+  bottom: 0px;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
+.team .grid .column .image:hover img,
+.team .grid .column .image:hover h4 {
+  transform: scale(1.1);
+}
+.team .grid .column p {
+  text-align: center;
+  padding: 20px 20px 25px;
+  line-height: 1.8;
+  font-size: 14px;
+  color: var(--paragraph-color);
 }
