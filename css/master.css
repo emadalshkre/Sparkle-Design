@@ -37,8 +37,8 @@ ul {
   padding: 0px 15px;
 }
 .section {
-  padding-top: 60px;
-  padding-bottom: 60px;
+  padding-top: 80px;
+  padding-bottom: 80px;
 }
 .section-title {
   margin: 0px auto 60px;
@@ -169,13 +169,9 @@ header .container i {
   color: white;
   padding: 20px;
 }
-.info {
-  padding-top: 80px;
-  padding-bottom: 120px;
-}
 @media (max-width: 767px) {
   .info {
-    padding-bottom: 80px;
+    padding-bottom: 40px;
   }
 }
 .info .container {
@@ -404,6 +400,9 @@ header .container i {
   font-size: 15px;
   letter-spacing: 8px;
 }
+.team {
+  padding-bottom: 0px;
+}
 .team .grid .column .image {
   position: relative;
   height: 350px;
@@ -439,4 +438,172 @@ header .container i {
   line-height: 1.8;
   font-size: 14px;
   color: var(--paragraph-color);
+}
+.about {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.about .yellow {
+  background-color: var(--main-color);
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 210px;
+}
+.about .container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.about .container .article {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 48%;
+}
+.about .container .article p {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.8;
+  padding: 40px;
+  color: var(--paragraph-color);
+  text-align: center;
+}
+.about .container .article span {
+  color: var(--black-color);
+  font-weight: 600;
+  font-style: italic;
+  display: block;
+  margin: 15px 0px 0px;
+  text-align: start;
+}
+.about .container .article:last-child span {
+  text-align: end;
+}
+.about .container .article .black {
+  background-color: black;
+  color: white;
+  text-align: start;
+}
+.about .container .article:last-child .black {
+  color: black;
+}
+.about .container .article:last-child p:last-child {
+  order: -1;
+}
+@media (max-width: 767px) {
+  .about .container {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .about .container .article:first-child {
+    margin: 0px 0px 40px;
+  }
+  .about .container .article p:last-child {
+    order: -1;
+  }
+  .about .container .article:last-child p:last-child {
+    order: 1;
+  }
+  .about .container .article span,
+  .about .container .article:last-child span {
+    text-align: center;
+  }
+}
+footer {
+  background-color: var(--black-color);
+  padding-bottom: 20px !important;
+}
+footer .container {
+  display: flex;
+  justify-content: space-between;
+}
+
+footer .container > div {
+  flex-basis: 48%;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  line-height: 1.8;
+  text-transform: capitalize;
+  font-weight: 500;
+  font-size: 14px;
+}
+footer .container > div > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+footer .left img {
+  height: 50px;
+}
+footer p span {
+  color: var(--main-color);
+}
+footer ul li:first-child {
+  font-size: 18px;
+}
+footer ul {
+  min-width: 130px;
+  margin: 0px 20px;
+}
+footer ul li {
+  font-size: 13px;
+}
+footer ul li:not(:last-child) {
+  margin: 0px 0px 10px;
+}
+footer .right h4 {
+  font-weight: 500;
+  font-size: 18px;
+}
+footer .right button {
+  letter-spacing: 1px;
+  text-transform: lowercase;
+  padding: 15px 60px;
+}
+footer .right i {
+  margin: 0px 10px 0px 0px;
+  font-size: 20px;
+}
+@media (max-width: 991px) {
+  footer .container {
+    flex-direction: column;
+  }
+  footer .container > div {
+    border-bottom: 1px solid rgb(221, 221, 221, 0.1);
+    padding: 0px 0px 50px;
+  }
+  footer .container > div:first-child {
+    margin: 0px 0px 40px;
+  }
+  footer .container ul {
+    text-align: center;
+    margin-left: auto;
+  }
+  footer .container .right > div {
+    order: -1;
+  }
+}
+@media (max-width: 767px) {
+  footer .container p {
+    margin: 20px 0px;
+  }
+  footer .container button {
+    margin: 0px 0px 20px;
+  }
+  footer .container > div {
+    flex-direction: column;
+  }
+  footer .container ul {
+    text-align: center;
+    margin-left: 0px;
+  }
+  footer .container > div > div {
+    align-items: center;
+    text-align: center;
+  }
 }
